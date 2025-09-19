@@ -266,14 +266,6 @@ https://blog.maxmind.com/2019/12/significant-changes-to-accessing-and-using-geol
 	parser.EnableAnnotationValidation = *enableAnnotationValidation
 
 	// check port collisions
-	if !ing_net.IsPortAvailable(*httpPort) {
-		return false, nil, fmt.Errorf("port %v is already in use. Please check the flag --http-port", *httpPort)
-	}
-
-	if !ing_net.IsPortAvailable(*httpsPort) {
-		return false, nil, fmt.Errorf("port %v is already in use. Please check the flag --https-port", *httpsPort)
-	}
-
 	if !ing_net.IsPortAvailable(*defServerPort) {
 		return false, nil, fmt.Errorf("port %v is already in use. Please check the flag --default-server-port", *defServerPort)
 	}
